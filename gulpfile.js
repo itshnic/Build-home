@@ -230,6 +230,9 @@ function fontStyle() {
 			case "regular":
 				fontWeight = 400;
 				break;
+			case "news":
+				fontWeight = 400;
+				break;
 			case "medium":
 				fontWeight = 500;
 				break;

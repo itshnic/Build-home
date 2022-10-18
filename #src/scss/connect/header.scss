@@ -1,2 +1,346 @@
 @import "mixins";
 @import "globals";
+.header {
+	&__body {
+		position: relative;
+	}
+	&__content {
+		@media (max-width: #{$md2 + px}) {
+			position: absolute;
+			@include adaptiv-value(max-width, 375, 320, 1);
+			@include adaptiv-value(padding-top, 150, 134, 1);
+			padding-left: 20px;
+			padding-right: 10px;
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
+	&__burger {
+		min-height: 120px;
+		padding: 0 10px;
+		display: none;
+		@media (max-width: #{$md2 + px}) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
+
+.info-header {
+	display: flex;
+	justify-content: space-between;
+	min-height: 120px;
+	align-items: center;
+	padding: 20px 0;
+	@media (max-width: #{$md2 + px}) {
+		flex-direction: column;
+		align-items: left;
+		gap: 20px;
+	}
+
+	&__logo {
+		text-align: center;
+		& p {
+			font-family: Inter;
+			font-weight: 600;
+			@include adaptiv-value(font-size, 12, 10, 1);
+			@include adaptiv-value(line-height, 15, 12, 1);
+			color: rgba(0, 0, 0, 0.8);
+			text-transform: capitalize;
+		}
+		& img {
+			@include adaptiv-value(height, 62, 44, 1);
+		}
+	}
+
+	&__address {
+		line-height: 25px;
+		color: $greyColor;
+		font-family: Inter;
+		text-align: right;
+		@media (max-width: #{$md2 + px}) {
+			text-align: left;
+			width: 100%;
+			position: relative;
+			padding-top: 19px;
+			&::before {
+				content: "";
+				width: 39px;
+				height: 2px;
+				background: #ffc239;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		& a {
+			color: #212864;
+			transition: all 0.3s ease-in-out;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #ffc239;
+				}
+			}
+		}
+	}
+}
+.phone-header {
+	@media (max-width: #{$md2 + px}) {
+		width: 100%;
+	}
+	&__link {
+		font-family: Inter;
+		font-size: 16px;
+		line-height: 30px;
+		font-weight: 700;
+		& a {
+			color: #212864;
+			transition: all 0.3s ease-in-out;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #ffc239;
+				}
+			}
+		}
+	}
+}
+.massage-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	@media (max-width: #{$md2 + px}) {
+		align-items: start;
+		flex-direction: column-reverse;
+		width: 100%;
+		@include adaptiv-value(gap, 24, 15, 1);
+	}
+
+	&__btn {
+		width: 200px;
+		height: 42px;
+		color: #212864;
+		border: 1px solid #212864;
+		border-radius: 25px;
+		transition: all 0.3s ease-in-out;
+		@media (any-hover: hover) {
+			&:hover {
+				background: #ffc239;
+				border: none;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		gap: 10px;
+	}
+
+	&__link {
+	}
+}
+.menu-header {
+	background: #15193d;
+	font-weight: 500;
+	font-family: Inter;
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 57px;
+		padding: 0 90px;
+		@media (max-width: #{$md2 + px}) {
+			flex-direction: column;
+			background: #ffff;
+			align-items: start;
+			gap: 14px;
+			font-size: 20px;
+			line-height: 34px;
+			font-weight: 700;
+			padding: 0;
+		}
+	}
+
+	&__item {
+		& a {
+			color: #ffff;
+			transition: all 0.3s ease-in-out;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #ffc239;
+				}
+			}
+			@media (max-width: #{$md2 + px}) {
+				color: #212864;
+			}
+		}
+	}
+}
+.catalog-header {
+	background: $purpleColor;
+	font-weight: 700;
+	font-family: Inter;
+
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		min-height: 45px;
+		padding: 0 30px;
+		@media (max-width: #{$md2 + px}) {
+			flex-direction: column;
+			background: #ffff;
+			align-items: start;
+			min-height: 0px;
+			gap: 16px;
+			font-size: 20px;
+			line-height: 24px;
+			font-weight: 600;
+			padding: 0 10px;
+		}
+	}
+
+	&__item {
+		flex: 1 1 auto;
+		text-align: center;
+		position: relative;
+		&:not(:first-child) {
+			&::before {
+				content: "";
+				width: 1px;
+				height: 35px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				left: 0;
+				background: rgba(255, 255, 255, 0.4);
+			}
+		}
+		& a {
+			color: #ffff;
+			transition: all 0.3s ease-in-out;
+			@media (any-hover: hover) {
+				&:hover {
+					color: #ffc239;
+				}
+			}
+			@media (max-width: #{$md2 + px}) {
+				color: #212864;
+			}
+		}
+	}
+}
+//<Burger>
+._burger-cross {
+	@media (max-width: #{$md2 + px}) {
+		width: 34px;
+		height: 18px;
+		position: relative;
+		z-index: 10;
+		margin-right: 10px;
+		&::after,
+		&::before,
+		& span {
+			transition: all 0.3s ease-in-out;
+			position: absolute;
+			right: 0;
+			height: 15%;
+			background: $mainColor;
+		}
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			width: 100%;
+		}
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+		}
+		& span {
+			position: absolute;
+			top: 50%;
+			transform: scale(1) translate(0px, -50%);
+			width: 80%;
+		}
+		&._active {
+			&::after {
+				transition: all 0.3s ease-in-out;
+				top: 50%;
+				transform: rotate(-45deg) translate(0, -65%);
+			}
+			&::before {
+				transition: all 0.3s ease-in-out;
+				bottom: 50%;
+				transform: rotate(45deg) translate(0, 70%);
+			}
+			& span {
+				transition: all 0.5s ease-in-out;
+				transform: scale(0);
+			}
+		}
+	}
+}
+._burger-list {
+	@media (max-width: #{$md2 + px}) {
+		top: 0;
+		right: -200%;
+		overflow: hidden;
+		opacity: 0;
+		box-shadow: 4px 4px 20px #e3e3e3;
+		border-radius: 10px;
+		z-index: 5;
+		transition: all 0.5s ease-in-out;
+		&._active {
+			right: 0;
+			opacity: 1;
+			overflow: visible;
+		}
+	}
+}
+//</Burger>
+//<Accordeon> ._list-accordeon должен быть -> nextElementSibling!!!
+._accordion {
+	display: none;
+	@media (max-width: #{$md2 + px}) {
+		display: block;
+		width: 100%;
+	}
+}
+.btn-accordion {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&::after {
+		content: "";
+		transition: transform 0.3s ease-in-out;
+		width: 0;
+		height: 0;
+		border-left: 6px solid transparent;
+		border-right: 6px solid transparent;
+		border-top: 8px solid #212864;
+	}
+	&._active {
+		&::after {
+			transform: rotate(180deg);
+		}
+	}
+}
+._list-accordion {
+	max-height: 0;
+	width: 100%;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+	box-shadow: 0px 28px 18px -38px rgba(34, 60, 80, 0.6) inset,
+		0px -28px 18px -38px rgba(34, 60, 80, 0.6) inset;
+	&._active {
+		min-height: 250px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+//</Accordeon>

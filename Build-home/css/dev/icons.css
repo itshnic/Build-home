@@ -1,0 +1,44 @@
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+.icon-arrow:before {
+  content: "\e900";
+}
+
+.icon-arrow-long:before {
+  content: "\e901";
+}
+
+.icon-check:before {
+  content: "\e902";
+}
+
+.icon-check-italic:before {
+  content: "\e903";
+}
+
+.icon-check-slide:before {
+  content: "\e904";
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+
+.icon-location:before {
+  content: "\e947";
+}
